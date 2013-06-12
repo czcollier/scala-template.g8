@@ -1,42 +1,6 @@
 import sbt._
-import Keys._
-import cc.spray.revolver.RevolverPlugin._
-
-object Build extends sbt.Build {
-  import Favorites._
-
-  lazy val myProject = Project("listserv", file("."))
-    .settings(Revolver.settings: _*)
-    .settings(
-      organization  := "net.xorf",
-      version       := "0.1.0",
-      scalaVersion  := "2.10.1",
-      scalacOptions := Seq("-deprecation", "-encoding", "utf8"),
-      javaOptions   := Seq("-Xdebug", "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"),
-      resolvers     ++= Seq(
-        Repositories.typesafe,
-        Repositories.spray,
-        Repositories.scalaToolsSnaps //for salat and reactiveMongo 0.9-SNAPSHOT
-      ),
-      libraryDependencies ++= Seq(
-        Libraries.akkaActor,
-        Libraries.sprayCan,
-        Libraries.sprayRouting,
-        Libraries.sprayJson,
-        Libraries.sprayTest,
-        Libraries.reactiveMongo,
-
-        Libraries.salat,
-
-        Libraries.jodaTime,
-
-        Libraries.specs2,
-
-        Libraries.slf4j,
-        Libraries.logback
-      )
-    )
-}
+//import Keys._
+//import cc.spray.revolver.RevolverPlugin._
 
 object Favorites {
   object Repositories {
